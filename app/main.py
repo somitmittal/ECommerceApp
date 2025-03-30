@@ -3,7 +3,6 @@ import os
 import uvicorn
 from fastapi import FastAPI
 
-from app import routes
 from app.routes import product_routes, order_routes
 
 # FastAPI App

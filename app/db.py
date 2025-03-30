@@ -18,10 +18,13 @@ class DatabaseInterface(ABC):
         """Close the database connection."""
         pass
 
+
 @singleton
 class SQLiteDB(DatabaseInterface):
     def __init__(self):
-        self.engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
+        self.engine = create_engine(
+            SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+        )
         self.db = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)()
         self.base = declarative_base()
         self.base.metadata.create_all(bind=self.engine)
