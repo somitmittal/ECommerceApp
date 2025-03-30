@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-from config.variables import SQLALCHEMY_DATABASE_URL
+from app.config.variables import SQLALCHEMY_DATABASE_URL
 from app.singleton import singleton
 
 from abc import ABC, abstractmethod
@@ -30,7 +30,7 @@ class SQLiteDB(DatabaseInterface):
         self.base.metadata.create_all(bind=self.engine)
 
     def connect(self):
-        yield self.db
+        return self.db
 
     def disconnect(self):
         self.db.close()

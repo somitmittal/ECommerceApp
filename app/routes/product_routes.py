@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 from typing import List
 
-from payloads.product import ProductCreate
-from services.product_service import ProductService
+from app.payloads.product import ProductCreate
+from app.services.product_service import ProductService
 
 router = APIRouter()
 

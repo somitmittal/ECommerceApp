@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import relationship
-
-from config.variables import Base
+from app.config.variables import Base, ENGINE
 
 
 class Order(Base):
@@ -18,3 +17,6 @@ class OrderItem(Base):
     product_id = Column(Integer, ForeignKey("products.id"))
     quantity = Column(Integer)
     order = relationship("Order")
+
+
+Base.metadata.create_all(bind=ENGINE)

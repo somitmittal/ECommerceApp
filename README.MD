@@ -7,7 +7,7 @@ A production-ready RESTful API built with FastAPI for managing products and orde
 ✅ **Product Management** → Add & list products  
 ✅ **Order Processing** → Place orders with stock validation  
 ✅ **Database** → Uses SQLite (easily switchable to PostgreSQL/MySQL)  
-✅ **Modular Architecture** → Routes, Models, and Schemas in separate files  
+✅ **Modular Architecture** → Routes, app.models, and Schemas in separate files  
 ✅ **Docker Support** → Easy deployment using Docker  
 ✅ **Tested Codebase** → Unit & Integration tests included  
 
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 ### 4️⃣ Run the Application
 
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 API is now live at → [http://127.0.0.1:8000](http://127.0.0.1:8000)

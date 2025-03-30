@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from payloads.order import OrderCreate
-from services.order_service import OrderService
+from app.payloads.order import OrderCreate
+from app.services.order_service import OrderService
 
 router = APIRouter()
 

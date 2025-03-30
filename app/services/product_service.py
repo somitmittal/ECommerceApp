@@ -1,7 +1,7 @@
 from app.db import DatabaseInterface, SQLiteDB
 from app.singleton import singleton
-from models.product import Product
-from payloads.product import ProductCreate
+from app.models.product import Product
+from app.payloads.product import ProductCreate
 
 
 @singleton
@@ -10,7 +10,7 @@ class ProductService:
         self.db = db_interface.connect()
 
     def get_products(self):
-        self.db.query(Product).all()
+        return self.db.query(Product).all() or []
 
     def create_product(self, product_create: ProductCreate) -> Product:
         db_product = Product(**product_create.model_dump())

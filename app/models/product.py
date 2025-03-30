@@ -1,6 +1,5 @@
 from sqlalchemy import Column, Integer, String, Float
-
-from config.variables import Base
+from app.config.variables import ENGINE, Base
 
 
 class Product(Base):
@@ -10,3 +9,6 @@ class Product(Base):
     description = Column(String)
     price = Column(Float)
     stock = Column(Integer)
+
+
+Base.metadata.create_all(bind=ENGINE)
